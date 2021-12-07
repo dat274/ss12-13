@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bt2</title>
+    <style>
+      .content {
+        border: 1px solid blue;
+        border-radius: 20px;
+        width: 300px;
+        box-shadow: 10px 10px 15px blue;
+        padding: 20px 20px;
+      }
+      .content h2 {
+        text-align: center;
+        color: cornflowerblue;
+      }
+      .content .incontent {
+        display: flex;
+        margin-bottom: 10px;
+      }
+      .content .incontent label {
+        width: 150px;
+      }
+      .content .incontent .styles {
+        margin: 5px;
+        background-color: cornflowerblue;
+        border: none;
+        padding: 10px 10px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h2>Register to system</h2>
+      <form action="#">
+        <div class="incontent">
+          <label> User name: </label>
+          <input id="userName" type="text" placeholder="your name" />
+        </div>
+        <div class="incontent">
+          <label> password: </label>
+          <input type="password" id="password" maxlength="20" />
+        </div>
+        <div class="incontent">
+          <label> Re_Password: </label>
+          <input type="password" id="RePassword" />
+        </div>
+        <div class="incontent">
+          <label> &nbsp; </label>
+          <input
+            type="submit"
+            onclick="condition()"
+            value="Login"
+            class="styles"
+          />
+          <input type="reset" value="reset" class="styles" />
+        </div>
+      </form>
+      <script>
+        function condition() {
+          let userName = document.getElementById("userName").value;
+          let passWord = document.getElementById("password").value;
+          let rePassword = document.getElementById("RePassword").value;
+          if (userName && passWord && rePassword) {
+            if (passWord == rePassword) {
+              alert("Nhập thành công");
+            } else {       
+              alert("Nhập không thành công");
+              return false; 
+            }
+          }
+          else{
+              alert("Chưa nhập gì cả")
+              return false;
+          }
+        }
+        // sao nó vẫn action của form 
+      </script>
+    </div>
+  </body>
+</html>

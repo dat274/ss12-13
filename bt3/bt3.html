@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bt3</title>
+  </head>
+  <body>
+    <form action="" name="formm">
+      <fieldset>
+        <legend>giải phương trình bậc nhất dạng ax+b=0</legend>
+        <div class="content">
+          <label> Nhập a: </label>
+          <input type="number" placeholder="0" name="typea" />
+        </div>
+        <div class="content">
+          <label> Nhập b: </label>
+          <input type="number" placeholder="0" name="typeb" />
+        </div>
+        <div class="content">
+          <label> &nbsp; </label>
+          <input
+            type="button"
+            value="Submit"
+            class="styles"
+            onclick="answer()"
+          />
+        </div>
+      </fieldset>
+      <div class="last"></div>
+      <script>
+        function answer() {
+        let a = parseFloat(document.formm.typea.value);
+        let b = parseFloat(document.formm.typeb.value);
+        let last = 'kết quả phương trình '+ a+'x+'+b+'=0';        
+          if ( a == 0 && b == 0) {
+            last +=' phương trình vô số nghiệm'
+          } 
+          if ( a != 0 && b == 0) {
+            last +=' Nghiệm là x=0'
+          }
+          if ( a == 0 && b != 0) {
+            last +=' Phương trình vô nghiệm'
+          }
+          if ( a != 0 && b != 0) {
+            last +=' Phương trình có nghiệm là ' +'x= '+ -b/a
+          } 
+          document.getElementsByClassName('last')[0].innerHTML = last;
+        }        
+      </script>
+    </form>
+  </body>
+</html>
